@@ -107,7 +107,7 @@ $(document).ready(function () {
         }
     )
     //发送删除数据
-    $('#demo-dt-delete-btn').click(function () {
+    /*$('#demo-dt-delete-btn').click(function () {
         var a = $("#genuses").bootstrapTable('getSelections');
         var genus = [];
         for (var i = 0; i < a.length; i++) {
@@ -125,6 +125,26 @@ $(document).ready(function () {
             }
         })
 
+
+    })*/
+    $('#demo-dt-delete-btn').click(function () {
+
+            var a = $("#genuses").bootstrapTable('getSelections');
+            var genus = [];
+            for (var i = 0; i < a.length; i++) {
+               genus[i] = a[i].id
+            }
+            $.ajax({
+                type: 'post',
+                dataType: 'JSON',
+                url: ipValue + '/genus/deleteByIds',
+                data: {_method: "DELETE", "ids": genus},
+                async: false,
+                traditional: true,
+                success: function () {
+                    window.location.reload()
+                }
+            })
 
     })
 
