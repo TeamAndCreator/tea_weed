@@ -127,12 +127,13 @@ $(document).ready(function () {
 
 
     })*/
+    //批量删除
     $('#demo-dt-delete-btn').click(function () {
 
             var a = $("#genuses").bootstrapTable('getSelections');
             var genus = [];
             for (var i = 0; i < a.length; i++) {
-               genus[i] = a[i].id
+                genus[i] = a[i].id
             }
             $.ajax({
                 type: 'post',
@@ -145,6 +146,7 @@ $(document).ready(function () {
                     window.location.reload()
                 }
             })
+
 
     })
 
