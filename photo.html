@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="css/nifty.min.css" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/ipaddress.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!--<link rel="stylesheet" href="myPagination.css">-->
+    <!--<script src="myPagination.js"></script>-->
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="js/nifty.min.js"></script>
+    <script src="js/photo.js"></script>
+
+</head>
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-lg">
+
+    <!--NAVBAR-->
+    <!--===================================================-->
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+
+            <!--Brand logo & name-->
+            <!--================================-->
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
+                    <div class="brand-title">
+                        <span class="brand-text"></span>
+                    </div>
+                </a>
+            </div>
+            <!--================================-->
+            <!--End brand logo & name-->
+
+
+            <!--Navbar Dropdown-->
+            <!--================================-->
+            <div class="navbar-content clearfix">
+                <ul class="nav navbar-top-links pull-left">
+
+                    <!--Navigation toogle button-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <li class="tgl-menu-btn">
+                        <a class="mainnav-toggle" href="#">
+                            <i class="demo-pli-view-list"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <!--Page Title-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <div id="page-title">
+                <h1 class="page-header text-overflow">图片</h1>
+
+            </div>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End page title-->
+            <div class="panel-body text-center">
+
+                <!--Pagination with disabled and active states-->
+                <!--===================================================-->
+                <ul class="pagination">
+                    <li class="disabled"><a href="#" class="demo-pli-arrow-left"></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><span>...</span></li>
+                    <li><a href="#">20</a></li>
+                    <li><a href="#" class="demo-pli-arrow-right"></a></li>
+                </ul>
+                <!--===================================================-->
+                <!--End Pagination with disabled and active states-->
+
+            </div>
+            <!-- Page Content -->
+            <div class="container">
+
+                <div class="row">
+
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="hover ehover1">
+                            <img class="img-responsive"
+                                 alt="">
+                            <div class="overlay text-center">
+                                <input class="input_result form-control">
+                                <button class="btn-mint" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="hover ehover1">
+                            <img class="img-responsive"
+                                 alt="">
+                            <div class="overlay text-center">
+                                <input class="input_result form-control">
+                                <button class="btn-mint" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="hover ehover1">
+                            <img class="img-responsive"
+                                 alt="">
+                            <div class="overlay text-center">
+                                <input class="input_result form-control">
+                                <button class="btn-mint" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="hover ehover1">
+                            <img class="img-responsive" id="test"
+                                 alt="">
+                            <div class="overlay text-center">
+                                <input class="input_result form-control">
+                                <button class="btn-mint" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <nav id="mainnav-container">
+            <div id="mainnav">
+                <div id="mainnav-menu-wrap">
+                    <div class="nano">
+                        <div class="nano-content">
+                            <div id="mainnav-profile" class="mainnav-profile">
+                                <div class="profile-wrap">
+                                    <div class="pad-btm">
+                                        <span class="label label-success pull-right">New</span>
+                                        <img class="img-circle img-sm img-border" src="img/profile-photos/1.png"
+                                             alt="Profile Picture">
+                                    </div>
+                                    <a href="#profile-nav" class="box-block" data-toggle="collapse"
+                                       aria-expanded="false">
+                                            <span class="pull-right dropdown-toggle">
+                                                <i class="dropdown-caret"></i>
+                                            </span>
+                                        <p class="mnp-name">管理员</p>
+                                        <span class="mnp-desc"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul id="mainnav-menu" class="list-group">
+
+                                <!--Category name-->
+                                <li class="list-header">茶园常见杂草</li>
+
+                                <!--Menu list item-->
+                                <li>
+                                    <a href="one.html">
+                                        <i class="demo-psi-home"></i>
+                                        <span class="menu-title">
+												<strong>首页</strong>
+											</span>
+                                    </a>
+                                </li>
+                                <!--Menu list item-->
+                                <li>
+
+                                    <a href="#">
+                                        <i class="fa fa-leaf" ></i>
+                                        <span class="menu-title">
+                                        <strong>常见杂草数据</strong>
+											</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <!--Submenu-->
+                                    <ul class="collapse">
+                                        <li ><a href="genus.html">常见杂草属</a></li>
+                                        <li><a href="spec.html">常见杂草种类</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a href="one.html">
+                                        <i class="demo-psi-split-vertical-2"></i>
+                                        <span class="menu-title">
+												<strong>照片</strong>
+											</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End Navigation toogle button-->
+
+</body>
+</html>
