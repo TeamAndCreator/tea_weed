@@ -175,34 +175,6 @@ $(document).ready(function () {
     }
     $('#genusNameCh').text("属名");
     $('#select').html(html2)
-    //(子任务)获取并发送添加表单
-    $('#add_btn').click(function () {
-        var formData = new FormData();
-        var title = $('input[name="title"]').val();
-        var genusNameCh = $("#select option:selected").val();
-
-        formData.append("title", title);
-        formData.append("genusNameCh", genusNameCh);
-        //将文件数组添加进来
-        var multipartFiles = myDropzone.files;
-        for (var i = 0; i < multipartFiles.length; i++) {
-            formData.append("multipartFiles", myDropzone.files[i]);
-        }
-
-        $.ajax({
-            type: 'POST',
-            dataType: 'JSON',
-            url: ipValue + '/subTask/save',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function () {
-                window.location.reload();
-            }
-        });
-
-
-    });
 
 
 
