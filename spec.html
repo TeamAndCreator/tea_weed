@@ -40,6 +40,12 @@
     <link href="plugins/x-editable/css/bootstrap-editable.css" rel="stylesheet">
     <!--Ion Icons [ OPTIONAL ]-->
     <link href="plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="plugins/magic-check/css/magic-check.min.css" rel="stylesheet">
+    <!--Summernote [ OPTIONAL ]-->
+    <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
+    <!--FooTable [ OPTIONAL ]-->
+    <link href="plugins/fooTable/css/footable.core.css" rel="stylesheet">
+
 
 
 
@@ -93,6 +99,19 @@
     <!--Buttons [ SAMPLE ]-->
     <script src="js/demo/ui-buttons.js"></script>
     <script src="js/demo/icons.js"></script>
+    <!--Summernote [ OPTIONAL ]-->
+    <script src="plugins/summernote/summernote.min.js"></script>
+
+
+    <!--Form File Upload [ SAMPLE ]-->
+    <script src="js/demo/form-text-editor.js"></script>
+    <!--FooTable [ OPTIONAL ]-->
+    <script src="plugins/fooTable/dist/footable.all.min.js"></script>
+
+
+    <!--FooTable Example [ SAMPLE ]-->
+    <script src="js/demo/tables-footable.js"></script>
+
 
 
 
@@ -212,7 +231,7 @@
                             </thead>
                         </table>
                         <div class="modal fade" id="modal-default">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -285,6 +304,23 @@
                                                         <input  id="specNameOth" class="form-control input-sm" type="text">
                                                     </div>
                                                 </div>
+                                                <div class="panel">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">描述</h3>
+                                                    </div>
+                                                    <div class="panel-body">
+
+                                                        <!--Summernote-->
+                                                        <!--===================================================-->
+                                                        <div id="demo-summernote">
+                                                            <h4><span style="color: rgb(206, 198, 206); font-family: inherit; line-height: 1.1;"></span><br>
+                                                            </h4><h4><font color="#9c9c94"></font></h4>
+                                                        </div>
+                                                        <!--===================================================-->
+                                                        <!-- End Summernote -->
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
@@ -299,11 +335,84 @@
                             <!-- /.modal-dialog -->
                         </div>
                     </div>
-                </div>
+                    <!--增加查看的模态框-->
+                    <div class="modal fade" id="exampleModal-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-info" data-backdrop="static">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="pci-cross pci-circle"></i></button>
+                                    <h4 class="modal-title" id="exampleModalLabel-info">详情</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="form-horizontal" style="font-size: 15px">
+                                        <div class="form-group">
+                                            <label for="specNameCh-info" class="col-sm-2 control-label"><b>中文名</b>:</label>
+                                            <div class="col-sm-2">
+                                                <p id="specNameCh-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                            </div>
+                                            <label for="specNameEn-info" class="col-sm-2 control-label"><b>英文名</b>:</label>
+                                            <div class="col-sm-2">
+                                                <p id="specNameEn-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                            </div>
+                                            <label for="specNameLd-info" class="col-sm-2 control-label"><b>拉丁名</b>:</label>
+                                            <div class="col-sm-2">
+                                                <p id="specNameLd-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="specNameOth-info" class="col-sm-2 control-label"><b>别名</b>:</label>
+                                            <div class="col-sm-2">
+                                                <p id="specNameOth-info" class="form-control-static pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+
+                                            <label for="genus-info" class="col-sm-2 control-label"><b>属</b>:</label>
+                                            <div class="col-sm-2 input-group">
+                                                <p id="genus-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                            </div>
+                                        </div>
+
+
+
+                                        <!--<div class="form-group">-->
+
+                                        <!--<label for="genus-info" class="col-sm-2 control-label">属:</label>-->
+                                        <!--<div class="col-sm-2 input-group">-->
+                                        <!--<p id="genus-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title=""></p>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+
+                                        <div class="row" style="padding-left: 75px;padding-right:95px">
+                                            </br>
+                                            <label><b>描述</b></label>
+                                            <div  class="pad-top bord-top" style="word-break:break-all;height:250px;" id="specDesc-info" ></div>
+                                            </br>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
+
+        </div>
         </div>
 
         <nav id="mainnav-container">
@@ -352,7 +461,7 @@
                                     </a>
                                     <!--Submenu-->
                                     <ul class="collapse">
-                                        <li ><a href="newlist.html">常见杂草属</a></li>
+                                        <li ><a href="genus.html">常见杂草属</a></li>
                                         <li><a href="spec.html">常见杂草种类</a></li>
 
                                     </ul>
