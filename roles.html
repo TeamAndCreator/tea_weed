@@ -64,7 +64,7 @@
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/ipaddress.js"></script>
 
-    <script src="js/user.js"></script>
+    <script src="js/roles.js"></script>
     <!--BootstrapJS [ RECOMMENDED ]-->
     <script src="js/bootstrap.min.js"></script>
 
@@ -193,14 +193,14 @@
                 <!--===================================================-->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">人员名单</h3>
+                        <h3 class="panel-title">角色名单</h3>
                     </div>
                     <div class="panel-body">
                         <button id="demo-dt-delete-btn" class="btn btn-danger btn-rounded " ><i class="demo-pli-cross"></i> 删除</button>
                         <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modal-default"><i class="demo-pli-cross"></i>
                             新增
                         </button>
-                        <table id="users" class="demo-add-niftycheck " data-toggle="table"
+                        <table id="roles" class="demo-add-niftycheck " data-toggle="table"
                                data-toolbar="#demo-delete-row"
                                data-search="true"
                                data-show-refresh="true"
@@ -235,62 +235,39 @@
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title">新增成员</h4>
+                                        <h4 class="modal-title">新增角色</h4>
                                     </div>
                                     <div class="modal-body">
                                         <form class="form-horizontal">
                                             <div class="panel-body">
+
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label" id="description">
+                                                    <label class="col-sm-3 control-label">
+                                                        角色名
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input  id="roleName" class="form-control input-sm" placeholder="" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">
+                                                       说明
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input  id="description" class="form-control input-sm" placeholder="" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="checkbox">
+                                                    <label class="col-sm-3 control-label" id="descriptions">
                                                         权限
                                                     </label>
                                                     <div class="col-sm-6">
-                                                        <select class="form-control" id="select">
-                                                            <option value="1">马塘属</option>
+                                                        <input type="checkbox" name="fruit" value="1" />删除照片
+                                                    </div>
+                                                </div>
 
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">
-                                                       姓名
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <input  id="username" class="form-control input-sm" placeholder="" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">
-                                                        电话
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <input  id="phoneNumber" class="form-control input-sm" placeholder="" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">
-                                                       账号
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <input  id="account" class="form-control input-sm" placeholder="" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">
-                                                       密码
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <input  id="password" class="form-control input-sm" placeholder="" type="password">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">
-                                                        再次输入密码
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <input  id="password_confirm" class="form-control input-sm" type="password">
-                                                    </div>
-                                                </div>
+
+
 
                                             </div>
                                         </form>
@@ -305,8 +282,6 @@
                             </div>
                             <!-- /.modal-dialog -->
                         </div>
-
-
                     </div>
                 </div>
 
@@ -374,7 +349,7 @@
 											</span>
                                     </a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="photo.html">
                                         <i class="demo-psi-split-vertical-2"></i>
                                         <span class="menu-title">
