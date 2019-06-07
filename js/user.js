@@ -35,6 +35,12 @@ $(document).ready(function () {
             align: 'center',
             title: '状态',
             sortable: 'true'
+        },{
+            field: 'roles',
+            align: 'center',
+            title: '岗位',
+            sortable: 'true',
+            formatter: 'roles'
         }
 
         ]
@@ -81,6 +87,7 @@ $(document).ready(function () {
                     "username": $("#username").val(),
                     "account": $("#account").val(),
                     "phoneNumber": $("#phoneNumber").val(),
+                    "role.id": $("#select option:selected").val(),
                     "password": $("#password").val()
                 };
                 var roleIdList = [2];
@@ -88,7 +95,7 @@ $(document).ready(function () {
                 $.ajax({
                     type: 'post',
                     dataType: 'JSON',
-                    url: ipValue + "/user/register",
+                    url: ipValue + "/user/save",
                     data: user,
                     async: false,
                     traditional: true,
@@ -120,4 +127,36 @@ $(document).ready(function () {
 
 
     })
+    //写入父任务
+    var role;
+    var html2 = '';
+    $.ajax({
+        crossDomain: true,
+        url: ipValue + "/role/findAll",
+        dataType: "json",
+        type: "GET",
+        async: false,
+        success: function (result) {
+            role = result.data ;
+            console.log(result)
+        }
+    });
+    for (var i = 0; i < role.length; i++) {
+        html2 += "<option value=" + role[i].id + ">" + role[i].description + "</option>"
+    }
+    $('#description').text("权限");
+    $('#select').html(html2)
 });
+//设置岗位列
+function roles(value, row) {
+    var i;
+    var str = "";
+    for (i = 0; i < value.length; i++) {
+        if (i != (value.length - 1)) {
+            str += value[i].description + ","
+        } else {
+            str += value[i].description;
+        }
+    }
+    return str;
+}
