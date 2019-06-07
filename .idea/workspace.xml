@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99c185bc-62d5-4b6b-b9de-0acb1b394923" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/roles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permission.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genus.html" beforeDir="false" afterPath="$PROJECT_DIR$/genus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ipaddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ipaddress.js" afterDir="false" />
@@ -80,7 +84,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/roles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
+            <state relative-caret-position="46">
               <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
             </state>
           </provider>
@@ -193,7 +197,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559914388897" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559914709568" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../atits_pc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -273,18 +277,18 @@
       <workItem from="1559181200631" duration="9354000" />
       <workItem from="1559307072305" duration="10829000" />
       <workItem from="1559366575370" duration="676000" />
-      <workItem from="1559904774003" duration="9526000" />
+      <workItem from="1559904774003" duration="9844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128248000" />
+    <option name="totallyTimeSpent" value="128566000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1930295" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1930295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -301,7 +305,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.7427536" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.7426273" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.24262735" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -606,7 +610,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/roles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
+        <state relative-caret-position="46">
           <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
         </state>
       </provider>
