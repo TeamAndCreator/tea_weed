@@ -90,26 +90,29 @@ $(document).ready(function () {
     });
 
 
-    $("button[type='submit']").click(function () {
-        var input = $(this).prev();
-        var id = input.attr("name");
-        var input_result = input.val();
-
-        $.ajax({
-            url: ipValue + "file/update_input_result",
-            dataType: "json",
-            type: "POST",
-            data: {
-                "_method":"PUT",
-                "id":id,
-                "input_result":input_result
-            },
-            success: function (result) {
-                alert(result.msg);
-            }
-        })
-
-    })
+    // $.ajax({
+    //     url: ipValue + "File_databaseService/page",
+    //     dataType: "json",
+    //     type: "GET",
+    //     data: {
+    //         "pageSize": 4,
+    //         "start": 3
+    //     },
+    //     success: function (result) {
+    //
+    //         jQuery('.input_result').each(function(key,value){
+    //             if (result.data[key] != null) {
+    //                 $(this).val(result.data[key].input_result);
+    //                 $(this).attr("name",result.data[key].id);
+    //             }
+    //         });
+    //         jQuery('.img-responsive').each(function(key,value){
+    //             if (result.data[key] != null) {
+    //                 $(this).attr("src", vr_path+result.data[key].path+"/"+result.data[key].uuid_name);
+    //             }
+    //         });
+    //     }
+    // })
 
 
 });
