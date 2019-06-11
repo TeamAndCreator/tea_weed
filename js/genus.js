@@ -43,7 +43,21 @@ $(document).ready(function () {
                     return{css:{'min-width':'100px'}};
                 }
             },
-   {
+            {
+                field:'section',//数据列
+                title:'科名',//数据列名称
+                sortable:true,//可排序
+                align:'center',//水平居中
+                valign:'middle',//垂直居中
+                cellStyle:function(value,row,index,field) {
+                    return {css: {'min-width': '80px'}};
+                },
+                formatter:function(value,row,index){
+                    //return row.genus.genusNameCh;
+                    return row.section == null ? '' : row.section.sectionNameCh;
+                }
+            },
+            {
             field: 'genusNameCh',
             align: 'center',
             title: '中文名',
@@ -86,11 +100,11 @@ $(document).ready(function () {
                     "genusNameEn": $("#genusNameEn").val(),
                     "genusNameLd": $("#genusNameLd").val(),
                     "genusNameOth": $("#genusNameOth").val(),
+                    "section.id": $("#select option:selected").val(),
                     "genusDesc": $("#demo-summernote").summernote('code'),
 
 
                 };
-
 
                 $.ajax({
                     type: 'post',
@@ -149,6 +163,25 @@ $(document).ready(function () {
 
 
     })
+    //写入父任务
+    var section;
+    var html2 = '';
+    $.ajax({
+        crossDomain: true,
+        url: ipValue + "/section/findAll",
+        dataType: "json",
+        type: "GET",
+        async: false,
+        success: function (result) {
+            section = result.data ;
+        }
+    });
+    for (var i = 0; i < section.length; i++) {
+        html2 += "<option value=" + section[i].id + ">" + section[i].sectionNameCh + "</option>"
+    }
+    $('#sectionNameCh').text("科名");
+    $('#select').html(html2)
+
 
 });
 //查看详情
@@ -171,6 +204,9 @@ function check(id) {
                 //$('#demo-summernote').summernote('code',res.data.specDesc).attr('data-original-title',res.data.specDesc);
                 //$('#demo-summernote-info').summernote('code',res.data.genusDesc);
                 $('#genusDesc-info').html(res.data.genusDesc);
+                if(res.data.section.sectionNameCh!=null){
+                    $('#section-info').html(res.data.section.sectionNameCh).attr('data-original-title',res.data.section.sectionNameCh);
+                }
                 //$('#genus-info').html(res.data.genus.genusNameCh).attr('data-original-title',res.data.genusNameCh);
                 $('#exampleModal-info').modal('show');
             }else if(res.code === 404){
@@ -202,6 +238,7 @@ function init_info(){
     $('#genusNameLd-info').val("").attr('data-original-title',"");
     $('#genusNameOth-info').val("").attr('data-original-title',"");
     $('#genusDesc-info').val("").attr('data-original-title',"");
+    $('#section-info').val("").attr('data-original-title',"");
 
 }
 

@@ -64,7 +64,7 @@
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/ipaddress.js"></script>
 
-    <script src="js/permission.js"></script>
+    <script src="js/section.js"></script>
     <!--BootstrapJS [ RECOMMENDED ]-->
     <script src="js/bootstrap.min.js"></script>
 
@@ -193,13 +193,14 @@
                 <!--===================================================-->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">权限管理</h3>
+                        <h3 class="panel-title">科</h3>
                     </div>
                     <div class="panel-body">
+                        <button id="demo-dt-delete-btn" class="btn btn-danger btn-rounded " ><i class="demo-pli-cross"></i> 删除</button>
                         <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modal-default"><i class="demo-pli-cross"></i>
                             新增
                         </button>
-                        <table id="permissions" class="demo-add-niftycheck " data-toggle="table"
+                        <table id="sections" class="demo-add-niftycheck " data-toggle="table"
                                data-toolbar="#demo-delete-row"
                                data-search="true"
                                data-show-refresh="true"
@@ -234,28 +235,70 @@
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title">新增权限</h4>
+                                        <h4 class="modal-title">新增科</h4>
                                     </div>
                                     <div class="modal-body">
                                         <form class="form-horizontal">
                                             <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">
+                                                        中文名
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input  id="sectionNameCh" class="form-control input-sm" placeholder="" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">
+                                                        英文名
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input  id="sectionNameEn" class="form-control input-sm" placeholder="" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">
+                                                        拉丁文名
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input  id="sectionNameLd" class="form-control input-sm" placeholder="" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">
+                                                        别名
+                                                    </label>
+                                                    <div class="col-sm-6">
+                                                        <input  id="sectionNameOth" class="form-control input-sm" type="text">
+                                                    </div>
+                                                </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">
-                                                        权限名
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <input  id="permissionName" class="form-control input-sm" placeholder="" type="text">
+
+                                                <div class="panel">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">描述</h3>
+                                                    </div>
+                                                    <div class="panel-body">
+
+                                                        <!--Summernote-->
+                                                        <!--===================================================-->
+                                                        <div id="demo-summernote">
+                                                            <h4><span style="color: rgb(206, 198, 206); font-family: inherit; line-height: 1.1;"></span><br>
+                                                            </h4><h4><font color="#9c9c94"></font></h4>
+                                                        </div>
+                                                        <!--===================================================-->
+                                                        <!-- End Summernote -->
+
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">
-                                                        说明
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <input  id="description" class="form-control input-sm" placeholder="" type="text">
-                                                    </div>
-                                                </div>
+
+
+                                                <!-- <div class="row" style="padding-left: 75px;padding-right:95px">
+                                                     </br>
+                                                     <label><b>描述</b></label>
+                                                     <div  class="pad-top bord-top" style="word-break:break-all;height:250px;" id="genusDesc"></div>
+                                                     </br>
+                                                 </div>-->
                                             </div>
                                         </form>
                                     </div>
@@ -269,6 +312,64 @@
                             </div>
                             <!-- /.modal-dialog -->
                         </div>
+
+                        <!--增加查看的模态框-->
+                        <div class="modal fade" id="exampleModal-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-info" data-backdrop="static">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="pci-cross pci-circle"></i></button>
+                                        <h4 class="modal-title" id="exampleModalLabel-info">详情</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="form-horizontal">
+                                            <div class="form-group" style="font-size: 15px">
+                                                <label for="sectionNameCh-info" class="col-sm-2 control-label"><b>中文名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameCh-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                                <label for="sectionNameEn-info" class="col-sm-2 control-label"><b>英文名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameEn-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sectionNameLd-info" class="col-sm-2 control-label"><b>拉丁名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameLd-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                                <label for="sectionNameOth-info" class="col-sm-2 control-label"><b>别名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameOth-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                            </div>
+
+
+                                            <!--<div class="form-group">-->
+                                            <!--<label for="sortNum-info" class="col-sm-2 control-label"><b>序号</b>:</label>-->
+                                            <!--<div class="col-sm-2">-->
+                                            <!--<p id="sortNum-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>-->
+                                            <!--</div>-->
+                                            <!--</div>-->
+
+                                            <div class="row" style="padding-left: 75px;padding-right:95px">
+                                                </br>
+                                                <label><b>描述</b></label>
+                                                <div  class="pad-top bord-top" style="word-break:break-all;height:250px;" id="sectionDesc-info"></div>
+                                                </br>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -323,8 +424,8 @@
                                     </a>
                                     <!--Submenu-->
                                     <ul class="collapse">
-                                        <li><a href="section.html">常见杂草科</a></li>
-                                        <li ><a href="genus.html">常见杂草属</a></li>
+                                        <li class="active" ><a href="section.html">常见杂草科</a></li>
+                                        <li><a href="genus.html">常见杂草属</a></li>
                                         <li><a href="spec.html">常见杂草种类</a></li>
 
                                     </ul>
@@ -345,7 +446,7 @@
 											</span>
                                     </a>
                                 </li>
-                                <li>
+                                <li >
                                     <a href="roles.html">
                                         <i class="fa fa-user"></i>
                                         <span class="menu-title">
@@ -353,7 +454,7 @@
 											</span>
                                     </a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="permission.html">
                                         <i class="fa fa-eye"></i>
                                         <span class="menu-title">

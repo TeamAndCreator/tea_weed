@@ -241,6 +241,17 @@
                                 <form class="form-horizontal">
                                     <div class="panel-body">
                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label" id="sectionNameCh">
+                                                所属体系
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <select class="form-control" id="select">
+
+                                                    <option value="21">马鞭草属</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="col-sm-3 control-label">
                                                 中文名
                                             </label>
@@ -274,7 +285,8 @@
                                         </div>
 
 
-                                            <div class="panel">
+
+                                        <div class="panel">
                                                 <div class="panel-heading">
                                                     <h3 class="panel-title">描述</h3>
                                                 </div>
@@ -325,6 +337,10 @@
                             <div class="modal-body">
                                 <div class="form-horizontal">
                                     <div class="form-group" style="font-size: 15px">
+                                        <label for="section-info" class="col-sm-2 control-label"><b>科名</b>:</label>
+                                        <div class="col-sm-2">
+                                            <p id="section-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                        </div>
                                         <label for="genusNameCh-info" class="col-sm-2 control-label"><b>中文名</b>:</label>
                                         <div class="col-sm-2">
                                             <p id="genusNameCh-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
@@ -424,6 +440,7 @@
                                 </a>
                                 <!--Submenu-->
                                 <ul class="collapse">
+                                    <li><a href="section.html">常见杂草科</a></li>
                                     <li class="active" ><a href="genus.html">常见杂草属</a></li>
                                     <li><a href="spec.html">常见杂草种类</a></li>
 
