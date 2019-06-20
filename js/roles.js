@@ -20,7 +20,7 @@ $(document).ready(function () {
         data: roles,
         columns: [{
             checkbox: true
-        }, {
+        }, /*{
             field: '',//数据列
             title: '操作',//数据列名称
             width: '90px',
@@ -37,7 +37,7 @@ $(document).ready(function () {
             cellStyle: function (value, row, index, field) {
                 return {css: {'min-width': '100px'}};
             }
-        }, {
+        },*/ {
             field: 'roleName',
             align: 'center',
             title: '角色名',
