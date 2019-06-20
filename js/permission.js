@@ -58,27 +58,6 @@ $(document).ready(function () {
 
         }
     )
-    //发送删除数据
-    $('#demo-dt-delete-btn').click(function () {
-        var a = $("#permissions").bootstrapTable('getSelections');
-        var  permission = [];
-        for (var i = 0; i < a.length; i++) {
-            permission[i] = a[i].id;
-        }
-        $.ajax({
-            type: 'post',
-            dataType: 'JSON',
-            url: ipValue + '/permission/deleteById',
-            data: {_method: "DELETE", "id": permission[0]},
-            async: false,
-            traditional: true,
-            success: function () {
-                window.location.reload()
-            }
-        })
-
-
-    })
     //写入父任务
     var permission;
     var html2 = '';

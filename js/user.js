@@ -87,7 +87,7 @@ $(document).ready(function () {
                     "username": $("#username").val(),
                     "account": $("#account").val(),
                     "phoneNumber": $("#phoneNumber").val(),
-                    "role.id": $("#select option:selected").val(),
+                    "roles.id": $("#select option:selected").val(),
                     "password": $("#password").val()
                 };
                 var roleIdList = [2];

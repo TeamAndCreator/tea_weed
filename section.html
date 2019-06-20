@@ -64,7 +64,7 @@
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/ipaddress.js"></script>
 
-    <script src="js/spec.js"></script>
+    <script src="js/section.js"></script>
     <!--BootstrapJS [ RECOMMENDED ]-->
     <script src="js/bootstrap.min.js"></script>
 
@@ -118,7 +118,6 @@
 
 
 
-
 </head>
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
@@ -136,7 +135,7 @@
                 <a href="index.html" class="navbar-brand">
                     <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
                     <div class="brand-title">
-                        <span class="brand-text"></span>
+                        <span class="brand-text">Nifty</span>
                     </div>
                 </a>
             </div>
@@ -194,14 +193,14 @@
                 <!--===================================================-->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">种</h3>
+                        <h3 class="panel-title">科</h3>
                     </div>
                     <div class="panel-body">
                         <button id="demo-dt-delete-btn" class="btn btn-danger btn-rounded " ><i class="demo-pli-cross"></i> 删除</button>
                         <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#modal-default"><i class="demo-pli-cross"></i>
                             新增
                         </button>
-                        <table id="specs" class="demo-add-niftycheck" data-toggle="table"
+                        <table id="sections" class="demo-add-niftycheck " data-toggle="table"
                                data-toolbar="#demo-delete-row"
                                data-search="true"
                                data-show-refresh="true"
@@ -226,58 +225,27 @@
                             <tr>
                                 <th data-field="state" data-checkbox="true"></th>
 
-
                             </tr>
                             </thead>
+
                         </table>
                         <div class="modal fade" id="modal-default">
-                            <div class="modal-dialog modal-lg">
+                            <div class="modal-dialog  modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title">新增种</h4>
+                                        <h4 class="modal-title">新增科</h4>
                                     </div>
                                     <div class="modal-body">
                                         <form class="form-horizontal">
                                             <div class="panel-body">
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label" id="genusNameCh">
-                                                        所属体系
-                                                    </label>
-                                                    <div class="col-sm-6">
-                                                        <select class="form-control" id="select">
-                                                            <option value="1">马塘属</option>
-                                                            <option value="2">狗尾巴草属</option>
-                                                            <option value="3">稗属</option>
-                                                            <option value="4">千金子属</option>
-                                                            <option value="5">画眉草属</option>
-                                                            <option value="6">荩草属</option>
-                                                            <option value="7">看麦娘属</option>
-                                                            <option value="8">早熟禾属</option>
-                                                            <option value="9">看麦娘属</option>
-                                                            <option value="10">燕麦属</option>
-                                                            <option value="11">狗牙根属</option>
-                                                            <option value="12">白茅属</option>
-                                                            <option value="13">鹅观草属</option>
-                                                            <option value="14">假俭草属</option>
-                                                            <option value="15">雀稗属</option>
-                                                            <option value="16">鼠尾草属</option>
-                                                            <option value="17">铁苋菜属</option>
-                                                            <option value="18">合萌属</option>
-                                                            <option value="19">铁苋菜属</option>
-                                                            <option value="20">胡枝子属</option>
-                                                            <option value="21">马鞭草属</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
                                                     <label class="col-sm-3 control-label">
                                                         中文名
                                                     </label>
                                                     <div class="col-sm-6">
-                                                        <input  id="specNameCh" class="form-control input-sm" placeholder="" type="text">
+                                                        <input  id="sectionNameCh" class="form-control input-sm" placeholder="" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -285,7 +253,7 @@
                                                         英文名
                                                     </label>
                                                     <div class="col-sm-6">
-                                                        <input  id="specNameEn" class="form-control input-sm" placeholder="" type="text">
+                                                        <input  id="sectionNameEn" class="form-control input-sm" placeholder="" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -293,7 +261,7 @@
                                                         拉丁文名
                                                     </label>
                                                     <div class="col-sm-6">
-                                                        <input  id="specNameLd" class="form-control input-sm" placeholder="" type="text">
+                                                        <input  id="sectionNameLd" class="form-control input-sm" placeholder="" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -301,9 +269,11 @@
                                                         别名
                                                     </label>
                                                     <div class="col-sm-6">
-                                                        <input  id="specNameOth" class="form-control input-sm" type="text">
+                                                        <input  id="sectionNameOth" class="form-control input-sm" type="text">
                                                     </div>
                                                 </div>
+
+
                                                 <div class="panel">
                                                     <div class="panel-heading">
                                                         <h3 class="panel-title">描述</h3>
@@ -321,6 +291,14 @@
 
                                                     </div>
                                                 </div>
+
+
+                                                <!-- <div class="row" style="padding-left: 75px;padding-right:95px">
+                                                     </br>
+                                                     <label><b>描述</b></label>
+                                                     <div  class="pad-top bord-top" style="word-break:break-all;height:250px;" id="genusDesc"></div>
+                                                     </br>
+                                                 </div>-->
                                             </div>
                                         </form>
                                     </div>
@@ -334,85 +312,70 @@
                             </div>
                             <!-- /.modal-dialog -->
                         </div>
-                    </div>
-                    <!--增加查看的模态框-->
-                    <div class="modal fade" id="exampleModal-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-info" data-backdrop="static">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="pci-cross pci-circle"></i></button>
-                                    <h4 class="modal-title" id="exampleModalLabel-info">详情</h4>
-                                </div>
 
-                                <div class="modal-body">
-                                    <div class="form-horizontal" style="font-size: 15px">
-                                        <div class="form-group">
-                                            <label for="specNameCh-info" class="col-sm-2 control-label"><b>中文名</b>:</label>
-                                            <div class="col-sm-2">
-                                                <p id="specNameCh-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
-                                            </div>
-                                            <label for="specNameEn-info" class="col-sm-2 control-label"><b>英文名</b>:</label>
-                                            <div class="col-sm-2">
-                                                <p id="specNameEn-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
-                                            </div>
-                                            <label for="specNameLd-info" class="col-sm-2 control-label"><b>拉丁名</b>:</label>
-                                            <div class="col-sm-2">
-                                                <p id="specNameLd-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="specNameOth-info" class="col-sm-2 control-label"><b>别名</b>:</label>
-                                            <div class="col-sm-2">
-                                                <p id="specNameOth-info" class="form-control-static pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="form-group">
-
-                                            <label for="genus-info" class="col-sm-2 control-label"><b>属</b>:</label>
-                                            <div class="col-sm-2 input-group">
-                                                <p id="genus-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
-                                            </div>
-                                        </div>
-
-
-
-                                        <!--<div class="form-group">-->
-
-                                        <!--<label for="genus-info" class="col-sm-2 control-label">属:</label>-->
-                                        <!--<div class="col-sm-2 input-group">-->
-                                        <!--<p id="genus-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title=""></p>-->
-                                        <!--</div>-->
-                                        <!--</div>-->
-
-                                        <div class="row" style="padding-left: 75px;padding-right:95px">
-                                            </br>
-                                            <label><b>描述</b></label>
-                                            <div  class="pad-top bord-top" style="word-break:break-all;height:250px;" id="specDesc-info" ></div>
-                                            </br>
-                                        </div>
-
-
+                        <!--增加查看的模态框-->
+                        <div class="modal fade" id="exampleModal-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-info" data-backdrop="static">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="pci-cross pci-circle"></i></button>
+                                        <h4 class="modal-title" id="exampleModalLabel-info">详情</h4>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+
+                                    <div class="modal-body">
+                                        <div class="form-horizontal">
+                                            <div class="form-group" style="font-size: 15px">
+                                                <label for="sectionNameCh-info" class="col-sm-2 control-label"><b>中文名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameCh-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                                <label for="sectionNameEn-info" class="col-sm-2 control-label"><b>英文名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameEn-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sectionNameLd-info" class="col-sm-2 control-label"><b>拉丁名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameLd-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                                <label for="sectionNameOth-info" class="col-sm-2 control-label"><b>别名</b>:</label>
+                                                <div class="col-sm-2">
+                                                    <p id="sectionNameOth-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>
+                                                </div>
+                                            </div>
+
+
+                                            <!--<div class="form-group">-->
+                                            <!--<label for="sortNum-info" class="col-sm-2 control-label"><b>序号</b>:</label>-->
+                                            <!--<div class="col-sm-2">-->
+                                            <!--<p id="sortNum-info" class="form-control-static  pad-hor-sm text-overflow add-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="" style="border:1px solid #ccccccbd"></p>-->
+                                            <!--</div>-->
+                                            <!--</div>-->
+
+                                            <div class="row" style="padding-left: 75px;padding-right:95px">
+                                                </br>
+                                                <label><b>描述</b></label>
+                                                <div  class="pad-top bord-top" style="word-break:break-all;height:250px;" id="sectionDesc-info"></div>
+                                                </br>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-
-
+                </div>
 
             </div>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!--End breadcrumb-->
-
-        </div>
         </div>
 
         <nav id="mainnav-container">
@@ -461,9 +424,9 @@
                                     </a>
                                     <!--Submenu-->
                                     <ul class="collapse">
-                                        <li><a href="section.html">常见杂草科</a></li>
+                                        <li class="active" ><a href="section.html">常见杂草科</a></li>
                                         <li><a href="genus.html">常见杂草属</a></li>
-                                        <li class="active"><a href="spec.html">常见杂草种类</a></li>
+                                        <li><a href="spec.html">常见杂草种类</a></li>
 
                                     </ul>
                                 </li>
@@ -475,7 +438,7 @@
 											</span>
                                     </a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="photo.html">
                                         <i class="demo-psi-split-vertical-2"></i>
                                         <span class="menu-title">
@@ -483,7 +446,7 @@
 											</span>
                                     </a>
                                 </li>
-                                <li>
+                                <li >
                                     <a href="roles.html">
                                         <i class="fa fa-user"></i>
                                         <span class="menu-title">
